@@ -10,9 +10,8 @@ let shouldResetDisplay = false;
 let justEvaluated = false;
 
 function updateDisplay(value) {
-  const display = formatNumber(value);
-  resultEl.textContent = display;
-  resultEl.classList.toggle('small', display.length > 9);
+  resultEl.textContent = value;
+  resultEl.classList.toggle('small', value.length > 9);
 }
 
 function formatNumber(value) {
