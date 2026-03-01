@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #1a1a2e;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.calculator {
+  background: #16213e;
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  width: 320px;
+}
+
+/* Display */
+.display {
+  background: #0f3460;
+  border-radius: 16px;
+  padding: 20px 24px 16px;
+  margin-bottom: 20px;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.expression {
+  font-size: 15px;
+  color: #8badc4;
+  min-height: 22px;
+  word-break: break-all;
+  text-align: right;
+}
+
+.result {
+  font-size: 48px;
+  font-weight: 300;
+  color: #e0e0e0;
+  word-break: break-all;
+  text-align: right;
+  line-height: 1.1;
+  transition: font-size 0.1s;
+}
+
+.result.small {
+  font-size: 32px;
+}
+
+/* Buttons grid */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.btn {
+  height: 64px;
+  border: none;
+  border-radius: 16px;
+  font-size: 22px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: transform 0.08s, opacity 0.08s, background 0.1s;
+  color: #e0e0e0;
+  background: #1a3a5c;
+  user-select: none;
+}
+
+.btn:active {
+  transform: scale(0.93);
+  opacity: 0.85;
+}
+
+/* Wide button (0 and AC) */
+.btn-wide {
+  grid-column: span 2;
+  text-align: left;
+  padding-left: 24px;
+}
+
+/* Secondary (AC, +/-, %) */
+.btn-secondary {
+  background: #2a5f8f;
+  color: #e8f4ff;
+}
+
+/* Operators (÷, ×, −, +) */
+.btn-operator {
+  background: #e94560;
+  color: #fff;
+}
+
+.btn-operator.active {
+  background: #fff;
+  color: #e94560;
+}
+
+/* Equals */
+.btn-equals {
+  background: #e94560;
+  color: #fff;
+}
+
+/* Hover states (non-touch) */
+@media (hover: hover) {
+  .btn:hover {
+    filter: brightness(1.15);
+  }
+}
